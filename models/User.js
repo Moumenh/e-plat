@@ -34,6 +34,9 @@ const userSchema = mongoose.Schema({
     },
     address: {
         type: String
+    },
+    role: {
+        type: Number
     }
 
 }, { timestamps: true })
