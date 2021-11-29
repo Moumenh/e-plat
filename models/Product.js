@@ -2,9 +2,9 @@ const mongoose = require('mongoose')
 
 //Scheema
 const productSchema = mongoose.Schema({
-    categoryID: {
+    SubCategoryID: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Category'
+        ref: 'SubCategory'
     },
     name: {
         type: String,
@@ -26,7 +26,13 @@ const productSchema = mongoose.Schema({
     },
     images: [{
         type: String,
-    }]
+    }],
+    deliveryTime: {
+        type: Number
+    },
+    Warehouse: {
+        type: String
+    },
 }, { timestamps: true })
 
 //Create the model according to Scheema
