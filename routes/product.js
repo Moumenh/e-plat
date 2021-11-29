@@ -3,7 +3,7 @@ const router = express.Router()
 const Product = require('../models/Product')
 
 router.post('/create', async (req, res) => {
-    const { SubCategoryID, name, imageUrl, description, price, quantity, images } = req.body
+    const { SubCategoryID, name, imageUrl, description, price, quantity, images, Warehouse, deliveryTime } = req.body
     try {
         let product = new Product({
             SubCategoryID,
@@ -13,6 +13,8 @@ router.post('/create', async (req, res) => {
             price,
             quantity,
             images,
+            Warehouse,
+            deliveryTime
         })
         await product.save()
         res.status(201).json({
